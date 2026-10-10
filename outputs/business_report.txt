@@ -1,0 +1,25 @@
+
+==================== ENERGY MANAGER WEEKLY BRIEFING ====================
+Site            : Virtual Smart-City Zone (commercial + residential feeder)
+Forecast window : 2026-01-01 00:00:00 -> 2026-01-07 23:00:00
+
+1) DEMAND OUTLOOK
+   Total energy expected : 174,221 kWh
+   Highest hour          : 1,465.5 kWh at 2026-01-07 19:00:00
+   Contract demand limit : 1,412.0 kWh/h
+
+2) PEAK ALERTS
+   Hours above limit (as forecast)     : 6
+   Hours above limit (after shifting)  : 0
+
+3) LOAD SHIFTING (move 10% of 18:00-22:00 load to off-peak)
+   Weekly cost before : INR 1,195,776
+   Weekly cost after  : INR 1,182,090
+   Weekly savings     : INR 13,685
+   Annualized savings : INR 711,632
+
+4) PROCUREMENT BACKTEST (60 days, penalty INR 2.0/kWh of error)
+   Imbalance cost with naive guess : INR 198,073
+   Imbalance cost with AI forecast : INR 105,994
+   Saved by AI                     : INR 92,079 (46.5%)
+=========================================================================

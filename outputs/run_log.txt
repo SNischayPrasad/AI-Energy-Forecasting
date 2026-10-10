@@ -1,0 +1,48 @@
+21:00:46 | INFO    | STEP 1/4  Generating virtual smart-meter dataset ...
+21:00:46 | INFO    | Saved 17,559 rows -> data\raw\energy_consumption.csv
+21:00:46 | INFO    | STEP 2/4  Loading and cleaning data ...
+21:00:46 | INFO    | Raw data profile: {"rows": 17559, "start": "2024-01-01 00:00:00", "end": "2025-12-31 23:00:00", "missing_energy_values": 115, "duplicate_timestamps": 15, "mean_kwh": 1164.16, "max_kwh": 7829.9, "min_kwh": 0.0}
+21:00:46 | INFO    | Preview:
+          timestamp  energy_kwh  temperature_c  is_holiday
+2024-01-01 00:00:00      620.45          20.33           1
+2024-01-01 01:00:00      654.83          18.04           1
+2024-01-01 02:00:00      638.54          18.44           1
+2024-01-01 03:00:00      686.75          17.55           1
+2024-01-01 04:00:00      657.99          17.79           1
+21:00:46 | INFO    | Cleaning report: {"rows_in": 17559, "duplicates_removed": 15, "missing_before_fill": 115, "outliers_detected": 25, "missing_after_fill": 0, "rows_out": 17544}
+21:00:46 | INFO    | STEP 3/4  Training and comparing models ...
+21:00:46 | INFO    | Train: 15,913 rows (2024-01-08 23:00:00 -> 2025-11-01 23:00:00)
+21:00:46 | INFO    | Test : 1,440 rows (2025-11-02 00:00:00 -> 2025-12-31 23:00:00)
+21:00:46 | INFO    | Seasonal Naive (baseline)  {'MAE': 68.78, 'RMSE': 98.12, 'MAPE_%': 6.24, 'R2': 0.7766}
+21:00:47 | INFO    | Linear Regression          {'MAE': 46.97, 'RMSE': 59.75, 'MAPE_%': 4.33, 'R2': 0.9171}  (trained in 0.1s)
+21:00:49 | INFO    | Random Forest              {'MAE': 38.38, 'RMSE': 50.1, 'MAPE_%': 3.47, 'R2': 0.9418}  (trained in 2.7s)
+21:01:06 | INFO    | Gradient Boosting          {'MAE': 36.8, 'RMSE': 46.43, 'MAPE_%': 3.36, 'R2': 0.95}  (trained in 16.9s)
+21:01:06 | INFO    | Best model: Gradient Boosting
+21:01:42 | INFO    | Saved model -> C:\Users\Nischay\AI-3\AI-Energy-Forecasting\models\best_model.joblib
+21:01:42 | INFO    | Model leaderboard (test set = last 60 days):
+                    model   MAE  RMSE  MAPE_%     R2  train_seconds
+        Gradient Boosting 36.80 46.43    3.36 0.9500          16.93
+            Random Forest 38.38 50.10    3.47 0.9418           2.70
+        Linear Regression 46.97 59.75    4.33 0.9171           0.10
+Seasonal Naive (baseline) 68.78 98.12    6.24 0.7766           0.00
+21:01:45 | INFO    | Saved charts 01-08 -> images/
+21:01:45 | INFO    | STEP 4/4  Forecasting next 168 hours + business simulation ...
+21:01:46 | INFO    | Forecast preview:
+                     forecast_kwh  lower_kwh  upper_kwh  temperature_c
+timestamp                                                             
+2026-01-01 00:00:00        722.31     683.27     814.93          18.04
+2026-01-01 01:00:00        716.55     677.51     809.17          18.11
+2026-01-01 02:00:00        734.32     695.28     826.94          17.44
+2026-01-01 03:00:00        720.28     681.24     812.90          17.98
+2026-01-01 04:00:00        736.33     697.29     828.95          17.43
+2026-01-01 05:00:00        726.71     687.67     819.33          18.71
+2026-01-01 06:00:00        769.81     730.77     862.43          19.32
+2026-01-01 07:00:00        788.94     749.90     881.56          20.60
+2026-01-01 08:00:00        865.38     826.34     958.00          22.08
+2026-01-01 09:00:00        940.02     900.98    1032.64          22.30
+2026-01-01 10:00:00       1024.44     985.40    1117.06          22.93
+2026-01-01 11:00:00        984.43     945.39    1077.05          25.21
+21:01:46 | INFO    | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+21:01:46 | INFO    | Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+21:01:47 | INFO    | Saved charts 09-10 -> images/
+21:01:47 | INFO    | Done.

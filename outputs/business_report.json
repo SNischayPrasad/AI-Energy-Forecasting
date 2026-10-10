@@ -1,0 +1,22 @@
+{
+  "site": "Virtual Smart-City Zone (commercial + residential feeder)",
+  "forecast_window": "2026-01-01 00:00:00 -> 2026-01-07 23:00:00",
+  "forecast_total_kwh": 174221.0,
+  "forecast_peak_kwh": 1465.5,
+  "forecast_peak_time": "2026-01-07 19:00:00",
+  "demand_limit_kwh": 1412.0,
+  "peak_alert_hours_before": 6,
+  "peak_alert_hours_after_shifting": 0,
+  "weekly_cost_before_inr": 1195776.0,
+  "weekly_cost_after_inr": 1182090.0,
+  "weekly_savings_inr": 13685.0,
+  "annualized_savings_inr": 711632.0,
+  "procurement_backtest": {
+    "test_days": 60,
+    "penalty_inr_per_kwh": 2.0,
+    "imbalance_cost_naive_inr": 198073.0,
+    "imbalance_cost_ai_inr": 105994.0,
+    "savings_inr": 92079.0,
+    "savings_pct": 46.5
+  }
+}
