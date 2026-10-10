@@ -1,0 +1,37 @@
+{
+  "best_model": "Gradient Boosting",
+  "trained_at": "2026-10-09T21:01:42",
+  "features": [
+    "hour",
+    "day_of_week",
+    "month",
+    "day_of_year",
+    "is_weekend",
+    "is_holiday",
+    "hour_sin",
+    "hour_cos",
+    "doy_sin",
+    "doy_cos",
+    "temperature_c",
+    "cooling_degree",
+    "heating_degree",
+    "lag_24h",
+    "lag_48h",
+    "lag_168h",
+    "rolling_mean_24h",
+    "rolling_max_24h",
+    "rolling_mean_168h"
+  ],
+  "test_days": 60,
+  "test_metrics": {
+    "MAE": 36.8,
+    "RMSE": 46.43,
+    "MAPE_%": 3.36,
+    "R2": 0.95,
+    "train_seconds": 16.93
+  },
+  "residual_q05": -39.04,
+  "residual_q95": 92.62,
+  "train_rows": 15913,
+  "test_rows": 1440
+}
