@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Trained model binaries (re-created by `python main.py`; can be large)
+models/*.joblib
+
+# Generated intermediate data (re-created by the pipeline)
+data/processed/*.csv
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
